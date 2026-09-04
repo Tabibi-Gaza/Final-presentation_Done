@@ -436,10 +436,12 @@ button {
   padding: 0;
 }
 .cover-hero-img {
-  width: 100%;
+  width: 102%;
   height: 100%;
   object-fit: cover;
+  object-position: right center;
   display: block;
+  transform: translateX(-1.5%);
 }
 .slide--cover .slide-inner {
   align-items: center;
