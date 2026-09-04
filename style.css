@@ -398,14 +398,21 @@ button {
   overflow: hidden;
 }
 .slide--cover-image {
-  background: #eef3f2;
+  background: #fff;
   padding: 0;
 }
 .cover-hero-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center center;
   display: block;
+}
+
+@media (max-width: 620px) {
+  .cover-hero-img {
+    object-position: 62% center;
+  }
 }
 .slide--cover .slide-inner {
   align-items: center;
