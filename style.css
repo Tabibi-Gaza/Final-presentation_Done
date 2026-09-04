@@ -399,7 +399,18 @@ button {
 }
 .slide--cover-image {
   background: #fff;
+  isolation: isolate;
   padding: 0;
+}
+.slide--cover-image::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  z-index: -1;
+  background: url("image/%D8%B5%D9%88%D8%B1%D8%A9%20%D8%B5%D8%AD.jpg") center / cover no-repeat;
+  filter: blur(18px);
+  opacity: 0;
+  transform: scale(1.06);
 }
 .cover-hero-img {
   width: 100%;
@@ -410,8 +421,17 @@ button {
 }
 
 @media (max-width: 620px) {
+  .slide--cover-image {
+    background: #eef3f2;
+  }
+
+  .slide--cover-image::before {
+    opacity: 0.28;
+  }
+
   .cover-hero-img {
-    object-position: 62% center;
+    object-fit: contain;
+    object-position: center center;
   }
 }
 .slide--cover .slide-inner {
