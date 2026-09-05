@@ -61,8 +61,25 @@
       </div>`;
   }
 
+  function buildDemoSlide() {
+    aiSlide.innerHTML = `
+      <div class="slide-inner demo-inner">
+        <div class="feature-head">
+          <span class="eyebrow reveal" style="--d:0">Demo</span>
+          <h2 class="slide-title reveal" style="--d:80"><span class="accent">Demo</span> | منصة الويب</h2>
+        </div>
+        <div class="demo-gallery">
+          ${[100, 200, 300, 400, 500].map((number, index) => `
+            <figure class="demo-shot reveal" style="--d:${180 + index * 70}">
+              <img src="image/${number}.png" alt="واجهة منصة الويب ${number}">
+              <figcaption>واجهة ${number}</figcaption>
+            </figure>`).join('')}
+        </div>
+      </div>`;
+  }
+
   buildSolutionsSlide();
-  keepTitleOnly(aiSlide, 'الديمو', 'شاهد كيف يعمل <span class="accent">التوثيق الذكي</span>');
+  buildDemoSlide();
   const total = slides.length;
   let current = 0;
   let isAnimating = false;
