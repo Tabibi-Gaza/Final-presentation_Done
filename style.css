@@ -1717,15 +1717,18 @@ filter: brightness(0) invert(1);}
 }
 .solution-art {
   width: 100%;
-  height: clamp(180px, 22vh, 240px);
+  min-height: 240px;
+  height: auto;
+  padding: 10px;
   display: grid;
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
+  box-sizing: border-box;
   border-radius: var(--radius-sm);
   background: var(--mist);
 }
 .solution-art .qr-frame {
-  width: min(100%, 220px);
+  width: min(100%, 240px);
   padding: 18px;
   gap: 8px;
   border-radius: 16px;
@@ -1735,8 +1738,8 @@ filter: brightness(0) invert(1);}
   display: none;
 }
 .solution-art .qr-code {
-  width: 135px;
-  height: 135px;
+  width: 155px;
+  height: 155px;
 }
 .solution-art .qr-caption {
   font-size: 11px;
@@ -1744,7 +1747,7 @@ filter: brightness(0) invert(1);}
 .solution-art .ai-terminal {
   width: 100%;
   min-height: 0;
-  transform: scale(0.9);
+  transform: scale(0.78);
   transform-origin: center;
 }
 .solution-card h3 {
