@@ -1851,6 +1851,11 @@ filter: brightness(0) invert(1);}
   font-size: 13px;
   font-weight: 700;
 }
+.mobile-demo-gallery .demo-shot img {
+  height: clamp(280px, 48vh, 390px);
+  aspect-ratio: auto;
+  object-fit: contain;
+}
 
 /* ---- Feature 1: QR ---- */
 .qr-frame {
