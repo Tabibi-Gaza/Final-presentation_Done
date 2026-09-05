@@ -5,6 +5,62 @@
   const slides = Array.from(document.querySelectorAll('[data-slide]'))
     .sort((a, b) => Number(a.dataset.order) - Number(b.dataset.order));
   slides.forEach(slide => deck.appendChild(slide));
+
+  const qrSlide = slides.find(slide => slide.classList.contains('qr-slide'));
+  const aiSlide = slides.find(slide => slide.classList.contains('ai-slide'));
+  const marketSlide = slides.find(slide => slide.dataset.order === '5');
+
+  function buildSolutionsSlide() {
+    const qrFrame = qrSlide.querySelector('.qr-frame').cloneNode(true);
+    const aiTerminal = aiSlide.querySelector('.ai-terminal').cloneNode(true);
+    qrFrame.classList.remove('reveal');
+    aiTerminal.classList.remove('reveal');
+    qrSlide.innerHTML = `
+      <div class="slide-inner solutions-inner">
+        <div class="feature-head">
+          <span class="eyebrow reveal" style="--d:0">الحل</span>
+          <h2 class="slide-title reveal" style="--d:80">ثلاثة حلول في منصة <span class="accent">واحدة</span></h2>
+          <p class="slide-sub reveal" style="--d:140">«طبيبي» يجمع السجل الصحي، التوثيق الذكي، والربط بين الأنظمة في تجربة واحدة.</p>
+        </div>
+        <div class="solutions-grid">
+          <article class="solution-card reveal" style="--d:200">
+            <div class="solution-art solution-art--qr"></div>
+            <h3>السجل الطبي عبر QR</h3>
+            <p>باركود خاص يرافق المريض ويمنح الطبيب سجلًا موحدًا فورًا.</p>
+          </article>
+          <article class="solution-card reveal" style="--d:280">
+            <div class="solution-art solution-art--ai"></div>
+            <h3>التوثيق الذكي بالـ AI</h3>
+            <p>يحوّل حديث الطبيب إلى أعراض وتشخيص ووصفة وتعليمات جاهزة.</p>
+          </article>
+          <article class="solution-card reveal" style="--d:360">
+            <div class="solution-art solution-art--network">
+              <span class="network-core">طبيبي</span>
+              <span class="network-node network-node--one">عيادات</span>
+              <span class="network-node network-node--two">مختبرات</span>
+              <span class="network-node network-node--three">صيدليات</span>
+              <span class="network-node network-node--four">مستشفيات</span>
+            </div>
+            <h3>الربط مع باقي الأنظمة</h3>
+            <p>منصة مفتوحة تتكامل مع العيادات والمختبرات والصيدليات بسهولة.</p>
+          </article>
+        </div>
+      </div>`;
+    qrSlide.querySelector('.solution-art--qr').appendChild(qrFrame);
+    qrSlide.querySelector('.solution-art--ai').appendChild(aiTerminal);
+  }
+
+  function keepTitleOnly(slide, label, title) {
+    slide.innerHTML = `
+      <div class="slide-inner title-only-inner">
+        <span class="eyebrow reveal" style="--d:0">${label}</span>
+        <h2 class="slide-title reveal" style="--d:80">${title}</h2>
+      </div>`;
+  }
+
+  buildSolutionsSlide();
+  keepTitleOnly(aiSlide, 'الديمو', 'شاهد كيف يعمل <span class="accent">التوثيق الذكي</span>');
+  keepTitleOnly(marketSlide, 'حجم السوق', 'سوق صحي يحتاج إلى <span class="accent">حل موحد</span>');
   const total = slides.length;
   let current = 0;
   let isAnimating = false;
