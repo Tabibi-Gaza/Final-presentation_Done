@@ -62,6 +62,15 @@
   }
 
   function buildDemoSlide() {
+    const demoShots = [
+      { number: 100, caption: 'لوحة التحكم الخاصة بالأدمن' },
+      { number: 200, caption: 'المريض يراجع سجله المرضي الشخصي' },
+      { number: 300, caption: 'الباركود الخاص بالمريض يعرض السجل المرضي والتاريخ الطبي لكل الزيارات' },
+      { number: 400, caption: 'شاشة الكشف الخاصة بالطبيب' },
+      { number: 500, caption: 'الباركود الخاص بالطبيب ومن خلاله يعرف السجل المرضي والتاريخ الطبي للمريض' },
+      { number: 900, caption: 'بعد إنهاء الكشف تُحفظ الزيارة عند الطبيب والمريض' }
+    ];
+
     aiSlide.innerHTML = `
       <div class="slide-inner demo-inner">
         <div class="feature-head">
@@ -69,10 +78,10 @@
           <h2 class="slide-title reveal" style="--d:80"><span class="accent">Demo</span> | منصة الويب</h2>
         </div>
         <div class="demo-gallery">
-          ${[100, 200, 300, 400, 500].map((number, index) => `
+          ${demoShots.map(({ number, caption }, index) => `
             <figure class="demo-shot reveal" style="--d:${180 + index * 70}">
               <img src="image/${number}.png" alt="واجهة منصة الويب ${number}">
-              <figcaption>واجهة ${number}</figcaption>
+              <figcaption>${caption}</figcaption>
             </figure>`).join('')}
         </div>
       </div>`;
