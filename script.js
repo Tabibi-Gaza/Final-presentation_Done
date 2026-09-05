@@ -26,12 +26,12 @@
           <article class="solution-card reveal" style="--d:200">
             <div class="solution-art solution-art--qr"></div>
             <h3>السجل الطبي عبر QR</h3>
-            <p>باركود خاص يرافق المريض ويمنح الطبيب سجلًا موحدًا فورًا.</p>
+            <p>باركود خاص يرافق المريض؛ يمسحه الطبيب ليصل فورًا إلى التاريخ المرضي والأدوية والحساسيات، ثم يضيف الزيارة الجديدة إلى السجل.</p>
           </article>
           <article class="solution-card reveal" style="--d:280">
             <div class="solution-art solution-art--ai"></div>
             <h3>التوثيق الذكي بالـ AI</h3>
-            <p>يحوّل حديث الطبيب إلى أعراض وتشخيص ووصفة وتعليمات جاهزة.</p>
+            <p>يسجل الطبيب ملاحظاته بصوته، ثم يحولها الذكاء الاصطناعي تلقائيًا إلى أعراض وتشخيص ووصفة وتعليمات منظمة.</p>
           </article>
           <article class="solution-card reveal" style="--d:360">
             <div class="solution-art solution-art--network">
@@ -42,7 +42,7 @@
               <span class="network-node network-node--four">مستشفيات</span>
             </div>
             <h3>الربط مع باقي الأنظمة</h3>
-            <p>منصة مفتوحة تتكامل مع العيادات والمختبرات والصيدليات بسهولة.</p>
+            <p>منصة مفتوحة تربط السجل الصحي بالعيادات والمختبرات والصيدليات، حتى تنتقل المعلومة الطبية بأمان وسلاسة.</p>
           </article>
         </div>
       </div>`;
