@@ -35,6 +35,10 @@
           </article>
           <article class="solution-card reveal" style="--d:360">
             <div class="solution-art solution-art--network">
+              <span class="network-line network-line--one"></span>
+              <span class="network-line network-line--two"></span>
+              <span class="network-line network-line--three"></span>
+              <span class="network-line network-line--four"></span>
               <span class="network-core">طبيبي</span>
               <span class="network-node network-node--one">عيادات</span>
               <span class="network-node network-node--two">مختبرات</span>
