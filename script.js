@@ -8,7 +8,6 @@
 
   const qrSlide = slides.find(slide => slide.classList.contains('qr-slide'));
   const aiSlide = slides.find(slide => slide.classList.contains('ai-slide'));
-  const marketSlide = slides.find(slide => slide.dataset.order === '5');
 
   function buildSolutionsSlide() {
     const qrFrame = qrSlide.querySelector('.qr-frame').cloneNode(true);
@@ -64,7 +63,6 @@
 
   buildSolutionsSlide();
   keepTitleOnly(aiSlide, 'الديمو', 'شاهد كيف يعمل <span class="accent">التوثيق الذكي</span>');
-  keepTitleOnly(marketSlide, 'حجم السوق', 'سوق صحي يحتاج إلى <span class="accent">حل موحد</span>');
   const total = slides.length;
   let current = 0;
   let isAnimating = false;
