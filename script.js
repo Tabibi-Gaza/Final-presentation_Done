@@ -1,7 +1,10 @@
 (() => {
   'use strict';
 
-  const slides = Array.from(document.querySelectorAll('[data-slide]'));
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('[data-slide]'))
+    .sort((a, b) => Number(a.dataset.order) - Number(b.dataset.order));
+  slides.forEach(slide => deck.appendChild(slide));
   const total = slides.length;
   let current = 0;
   let isAnimating = false;
@@ -118,8 +121,6 @@
   // Touch / swipe navigation
   let touchStartX = 0;
   let touchStartY = 0;
-  const deck = document.getElementById('deck');
-
   deck.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
     touchStartY = e.touches[0].clientY;

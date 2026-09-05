@@ -367,6 +367,53 @@ button {
   border-color: transparent;
 }
 
+.pitch-slide {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(14, 165, 164, 0.1), transparent 28%),
+    var(--mist);
+}
+.pitch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 26px);
+  width: 100%;
+}
+.pitch-card {
+  min-height: 180px;
+  padding: clamp(20px, 3vw, 34px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  text-align: right;
+}
+.pitch-card b {
+  font-family: var(--f-display);
+  font-size: clamp(18px, 2vw, 26px);
+  color: var(--blue-deep);
+}
+.pitch-card span {
+  color: var(--slate);
+  font-size: clamp(15px, 1.5vw, 19px);
+  line-height: 1.8;
+}
+.pitch-card strong {
+  color: var(--teal);
+  font-family: var(--f-display);
+  font-size: 30px;
+}
+.pitch-card--highlight {
+  background: var(--blue-deep);
+  border-color: var(--blue-deep);
+}
+.pitch-card--highlight b,
+.pitch-card--highlight span {
+  color: #fff;
+}
+.pitch-grid--steps + .feature-preview {
+  width: 100%;
+}
+
 .icon-badge {
   width: 46px;
   height: 46px;
@@ -2007,7 +2054,8 @@ filter: brightness(0) invert(1);}
     --pad-y: 76px;
   }
   .stat-grid,
-  .solution-grid {
+  .solution-grid,
+  .pitch-grid {
     grid-template-columns: 1fr;
   }
   .funnel-row {
